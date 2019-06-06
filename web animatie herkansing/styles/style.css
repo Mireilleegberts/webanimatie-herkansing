@@ -1,0 +1,119 @@
+body {
+  background-color: #DCDDCE;
+  padding: 0;
+  display: grid;
+  height: 590px;
+  grid-template-columns: repeat(3, 3fr);
+  grid-template-rows: repeat(auto, auto);
+}
+
+#m{
+  width:  35vw;
+  margin-top: -10px;
+  grid-column: 2/3;
+  grid-row: 1fr;
+}
+
+.Mkleur{
+  fill: white;
+}
+
+#darkMode {
+  width:  35vw;
+  margin-top: -10px;
+  grid-column: 2/3;
+  grid-row: 1fr;
+  color blue;
+}
+
+#komma{
+  width:  10vw;
+  grid-column: 1/3;
+  grid-row: 3/3;
+  margin-left: 20vw;
+  cursor: pointer;
+
+}
+ .showParashute{
+  animation-name: parashute;
+  animation-duration: 5s;
+ }
+
+
+@keyframes parahute {
+  10%{
+    transform: scale(1.2);
+    fill: pink;
+  }
+  15%{
+    transform: scale(1.2);
+    fill: blue;
+  }
+  20%{
+    transform: scale(1.1);
+    fill: lightgreen;
+  }
+}
+
+
+#o{
+  width:  35vw;
+  margin-top: -10px;
+  grid-column: 2/3;
+  grid-row: 3/3;
+}
+
+.oKleur{
+fill: white;
+}
+
+#line {
+width: 100%;
+top: 40vh;
+grid-column: 2/4;
+margin-top: 22vh;
+align-self: center;
+
+}
+
+#tekst{
+grid-column: 1/2;
+grid-row: 2/2;
+margin-top: 22vh;
+align-self: center;
+}
+
+div #plane{
+  position: absolute;
+  width: 15vw;
+  bottom: 40px;
+  margin-left: -40vw;
+
+}
+
+div #plane:active{
+  animation-name: move;
+  animation-duration: 5s;
+  animation-timing-function: ease-in-out;
+}
+
+@keyframes move{
+
+  40% {
+    margin-left: 10vw;
+    margin-bottom: 60vh;
+  }
+80% {
+  -moz-transform: scale(-1, 1);
+  -webkit-transform: scale(-1, 1);
+  -o-transform: scale(-1, 1);
+  -ms-transform: scale(-1, 1);
+  transform: scale(-1, 1);
+  margin-left: -50vw;
+  margin-bottom: 40vh;
+
+  }
+
+
+}
+
