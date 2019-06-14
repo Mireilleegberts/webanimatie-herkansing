@@ -1,10 +1,119 @@
-body {
+body{
+  background-color: #DCDDCE;
+  padding: 0;
+  max-height: 550px;
+}
+/* Dancing letters */
+.negen {
+  animation-name: wave;
+  animation-duration: 2s;
+  cursor: pointer;
+
+}
+
+.letterD {
+  animation-name: wave;
+  animation-duration: 2s;
+  cursor: pointer;
+  animation-delay:0.3s;
+}
+
+.letterE {
+  animation-name: wave;
+  animation-duration: 2s;
+  cursor: pointer;
+  animation-delay:0.6s;
+}
+
+.letterC{
+  animation-name: wave;
+  animation-duration: 2s;
+  cursor: pointer;
+  animation-delay:0.9s;
+}
+
+.letterETwee {
+  animation-name: wave;
+  animation-duration: 2s;
+  cursor: pointer;
+  animation-delay:1.2s;
+}
+
+.letterM{
+  animation-name: wave;
+  animation-duration: 2s;
+  cursor: pointer;
+  animation-delay:1.5s;
+}
+
+.letterB {
+  animation-name: wave;
+  animation-duration: 2s;
+  cursor: pointer;
+  animation-delay:1.8s;
+}
+
+.letterEDrie {
+  animation-name: wave;
+  animation-duration: 2s;
+  cursor: pointer;
+  animation-delay:2.1s;
+}
+
+.letterR {
+  animation-name: wave;
+  animation-duration: 2s;
+  cursor: pointer;
+  animation-delay:2.4s;
+}
+
+
+
+@keyframes wave{
+  0%, 20%, 60%, 100% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+
+  40% {
+    -webkit-transform: translateY(-20px);
+    transform: translateY(-20px);
+  }
+
+  80% {
+    -webkit-transform: translateY(-10px);
+    transform: translateY(-10px);
+  }
+}
+
+
+.st0 {
+  animation-name: spin;
+  animation-duration: 2s;
+  animation-delay:2.7s;
+  transform-origin: center;
+  animation-timing-function: linear;
+}
+
+@keyframes spin {
+    from {transform:rotate(0deg);}
+    to {transform:rotate(360deg);}
+}
+
+/* Dancing letters */
+/* Elementen + Darkmode */
+
+
+.content-container {
   background-color: #DCDDCE;
   padding: 0;
   display: grid;
-  height: 590px;
   grid-template-columns: repeat(3, 3fr);
-  grid-template-rows: repeat(auto, auto);
+  grid-template-rows: auto 8em auto;
+}
+.achtergrondDonker{
+  background-color: black;
+  height: 100%
 }
 
 #m{
@@ -12,7 +121,30 @@ body {
   margin-top: -10px;
   grid-column: 2/3;
   grid-row: 1fr;
+  animation-delay: 3s ease-in-out;
+  animation-name: vertraging;
+  animation-duration: 2s;
 }
+
+#m:hover{
+  animation-name: dance;
+  animation-duration: 4s infinite alternate ease-in-out;
+}
+
+@keyframes dance {
+  from, 49% { transform-origin: -50% 100%; }
+  50%, 75%, to { transform-origin: 150% 100%; }
+  25% { transform: rotate(-10deg); }
+  50% { transform: rotate(0deg); }
+  75% { transform: rotate(10deg); }
+}
+
+.mKey{
+  transition: width 2s, height 2s, transform 2s;
+}
+
+
+
 
 .Mkleur{
   fill: white;
@@ -32,15 +164,22 @@ body {
   grid-row: 3/3;
   margin-left: 20vw;
   cursor: pointer;
-
+  animation-name: vertraging;
+  animation-duration: 2s;
 }
- .showParashute{
-  animation-name: parashute;
+
+.kommaKleur{
+  fill: white;
+}
+
+
+ .kommaMove{
+  animation-name: kommaDance;
   animation-duration: 5s;
  }
 
 
-@keyframes parahute {
+@keyframes kommaDance{
   10%{
     transform: scale(1.2);
     fill: pink;
@@ -58,9 +197,17 @@ body {
 
 #o{
   width:  35vw;
-  margin-top: -10px;
+  margin-top: -80px;
   grid-column: 2/3;
   grid-row: 3/3;
+  animation-name: vertraging;
+  animation-duration: 2s;
+}
+
+#o:active{
+  -webkit-transform: rotateY(170deg);
+  transform: rotateY(170deg);
+  transition-duration: 1s;
 }
 
 .oKleur{
@@ -71,49 +218,209 @@ fill: white;
 width: 100%;
 top: 40vh;
 grid-column: 2/4;
-margin-top: 22vh;
 align-self: center;
+animation-name: vertraging;
+  animation-duration: 2s;
 
+}
+
+.lineKleur{
+  fill: white;
 }
 
 #tekst{
 grid-column: 1/2;
 grid-row: 2/2;
-margin-top: 22vh;
 align-self: center;
+animation-name: vertraging;
+  animation-duration: 2s;
 }
 
-div #plane{
-  position: absolute;
+.textLight{
+  fill: white;
+}
+
+button{
+width: 7vw;
+height: 7vh;
+position: absolute;
+background-color: black;
+color: white;
+font-family: "Times New Roman", Times, serif;
+margin:20px;
+border-style: none;
+animation-name: vertraging;
+  animation-duration: 2s;
+
+}
+
+.btnLight {
+width: 7vw;
+height: 7vh;
+position: absolute;
+background-color: white;
+color: black;
+font-family: "Times New Roman", Times, serif;
+margin:20px;
+border-style: none;
+}
+
+
+
+.hidden{
+  display: none;
+}
+
+@keyframes vertraging{
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 100%;
+  }
+}
+
+/* Elementen + Darkmode */
+/* Vliegtuigje */
+
+.plane {
   width: 15vw;
-  bottom: 40px;
-  margin-left: -40vw;
-
+  position: absolute;
+  bottom: 2vh;
+  margin-left: 35vw;
+  animation-name: vertraging;
+  animation-duration: 2s;
 }
 
-div #plane:active{
+.planeMove {
   animation-name: move;
-  animation-duration: 5s;
-  animation-timing-function: ease-in-out;
+  animation-duration: 7s;
 }
 
 @keyframes move{
 
-  40% {
-    margin-left: 10vw;
+  30% {
+    margin-left: 80vw;
     margin-bottom: 60vh;
   }
-80% {
+60% {
   -moz-transform: scale(-1, 1);
   -webkit-transform: scale(-1, 1);
   -o-transform: scale(-1, 1);
   -ms-transform: scale(-1, 1);
   transform: scale(-1, 1);
-  margin-left: -50vw;
+  margin-left: -20vw;
   margin-bottom: 40vh;
-
   }
 
+}
+/* Vliegtuigje */
+/* Responsive */
+
+/* mobile */
+@media only screen
+  and (min-device-width: 320px)
+  and (max-device-width: 480px)
+  and (-webkit-min-device-pixel-ratio: 2) {
+
+    #m {
+      width: 95vw;
+    }
+
+    #o {
+      width: 95vw;
+      margin-top: 23vh;
+
+    }
+    button{
+      width: 30vw;
+    }
+
+    .btnLight{
+      width: 30vw;
+    }
+
+    #text {
+      position: absolute;
+      margin-left: 20vw;
+    }
+
+    #line {
+    margin-top: 20vh;
+
+    }
+
+    #komma {
+      width: 30vw;
+      margin-top: 9vh;
+      margin-left: 20px;
+    }
+
+    .plane {
+  width: 60vw;
+  margin-left: 11vw;
+  animation-name:moveMobile;
+  animation-duration: 5s;
+  animation-delay: 2s;
+}
+}
+
+  @keyframes moveMobile {
+    20%{
+      margin-left: 30vh;
+      margin-bottom: 30vh;
+    }
+    60% {
+      margin-left: -60vh;
+      margin-bottom: 30vh;
+    }
+    80% {
+      -moz-transform: scale(-1, 1);
+  -webkit-transform: scale(-1, 1);
+  -o-transform: scale(-1, 1);
+  -ms-transform: scale(-1, 1);
+  transform: scale(-1, 1);
+  margin-left: -30vw;
+  margin-bottom: 40vh;
+    }
+  }
+/* mobile */
+/* Ipad Lanscape */
+
+
+@media only screen
+  and (min-device-width: 768px)
+  and (max-device-width: 1024px)
+  and (orientation: portrait)
+  and (-webkit-min-device-pixel-ratio: 2) {
+
+    #m {
+      width: 75vw !important;
+      margin-bottom: 10vh;
+    }
+
+    #o {
+      width: 75vw !important;
+      margin-top: 8vh;
+    }
+
+    #tekst{
+    height: 20vw;
+    }
+
+    #line{
+    margin-top: 8vh;
+    }
+
+    #komma {
+    width: 20vw;
+    }
+
+    .plane{
+      width: 35vw;
+    }
 
 }
+
+
 
